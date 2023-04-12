@@ -25,10 +25,12 @@ public class UserManagementSteps {
 	public void i_click_on_login_button()
 	{
 		loginPage.button.click();
+		System.out.println("remote repos test");
 	}
 
 	@Then("I should be on user profile page")
 	public void i_should_be_on_user_profile_page() {
 		Assert.assertTrue(loginPage.header.isDisplayed());
 	}
+	
 }
