@@ -23,6 +23,9 @@ public class LogInPage {
 	public WebElement button ;
 	
 	
-	@FindBy(xpath="//h6[textt()='']")
+	@FindBy(xpath="//h6[text()='Account Settings']")
 	public WebElement header;
+	
+	@FindBy(xpath= "//p[text()='These credentials do not match our records.']")
+	public WebElement errrorMessage;
 }

@@ -20,17 +20,26 @@
 Feature: Creater app user management
   User should be able to interact with the application on successful login
 
+	Background:
+		Given As a user, I am on the login page
+
+
   @validlogin @loginTest @smokeTest
-  Scenario: Successful login
-  	Given As a user, I am on the login page
+  Scenario: Successful login  	
   	When I enter valid username and valid password
   	And I clicked on login button
   	Then I should be on user profile page
     
   @invalidlogin @loginTest 
-  Scenario: Invalid username login  
-  	Given As a user, I am on the login page
+  Scenario: Invalid username login    	
   	When I enter invalid username and valid password
-  	And I click on login button
+  	And I clicked on login button
+  	Then I should see an error message
+  	And I should not be logged in
+  	
+  @invalidPasswordLogin	
+  Scenario: Invalid password login	  	
+  	When I enter valid username and invalid password
+  	And I clicked on login button
   	Then I should see an error message
   	And I should not be logged in
